@@ -1,4 +1,4 @@
-@use 'utilities' as *;
+@use 'components' as test;
 
 
 *,
@@ -16,9 +16,17 @@ html {
 
 body {
 	font-family: 'Raleway', sans-serif;
-	color: $white;
-	background-color: $dark;
+	color: test.$white;
+	background-color: test.$dark;
 }
+
+h1.company-name {
+	margin-bottom: 0.5em;
+	font-size: 3rem;
+	font-family: 'Cinzel', serif;
+	color: test.$gold;
+}
+
 
 .wrapper {
 	margin: 0 auto;
@@ -26,21 +34,14 @@ body {
 	width: 100%;
 }
 
-h1.company-name {
-	margin-bottom: 0.5em;
-	font-size: 3rem;
-	font-family: 'Cinzel', serif;
-	color: $gold;
-}
-
 // header
 
 .header {
-	position: relative;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	height: 100vh;
+	position: relative;
 	overflow: hidden;
 
 	&__text {
@@ -105,10 +106,11 @@ h1.company-name {
 	transform: translate(0%, -50%);
 	z-index: 500;
 
+
 	&-inner,
 	&-inner::before,
 	&-inner::after {
-		background-color: $white;
-		z-index: 1000;
+		background-color: test.$white;
+		// z-index: 1000;
 	}
 }

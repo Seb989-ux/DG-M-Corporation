@@ -16,6 +16,7 @@ html {
 
 body {
 	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
 	color: $white;
 	background-color: $dark;
 }
@@ -29,8 +30,30 @@ h1.company-name {
 
 .wrapper {
 	margin: 0 auto;
-	min-width: 1200px;
+	max-width: 1200px;
 	width: 100%;
+}
+
+.section__title {
+	position: relative;
+	margin: 0 auto 2em;
+	width: fit-content;
+	color: $gold;
+	font-weight: 100;
+
+	&::before {
+		position: absolute;
+		content: '';
+		height: 2px;
+		width: 40px;
+		bottom: -0.1em;
+		left: 0;
+		background-color: $gold;
+	}
+
+	span {
+		font-weight: 900;
+	}
 }
 
 // header
@@ -40,6 +63,7 @@ h1.company-name {
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	height: 100vh;
+	width: 100vw;
 	position: relative;
 	overflow: hidden;
 
@@ -157,6 +181,7 @@ h1.company-name {
 
 // main
 // cards
+
 .cards {
 	background-color: $darker;
 	overflow: hidden;
@@ -172,12 +197,12 @@ h1.company-name {
 		position: relative;
 		display: grid;
 		justify-items: center;
-		text-align: center;
 		padding: 3em;
+		text-align: center;
 		border: 1px solid transparent;
 		border-radius: 8px;
 		background-color: $dark;
-		transform: background-color 0.3s, border 0.3s;
+		transition: background-color 0.3s, border 0.3s;
 		z-index: 5;
 
 		&:hover {
@@ -224,6 +249,61 @@ h1.company-name {
 			grid-row: 3/4;
 			grid-column: 1/-1;
 		}
+	}
+}
+
+// info
+
+.info {
+	position: relative;
+	display: grid;
+	grid-template-areas:
+		'title'
+		'box'
+		'box';
+	padding: 6em 2em;
+
+	&__title {
+		grid-area: title;
+	}
+
+	&__boxes {
+		grid-area: box;
+	}
+
+	&__box-img {
+		width: 100%;
+		object-fit: cover;
+		filter: sepia();
+	}
+
+	&__box-title {
+		margin: 0.3em 0;
+		font-size: 2.2rem;
+		font-weight: 200;
+		color: $gold;
+	}
+
+	&__box-text {
+		margin-bottom: 0.5em;
+	}
+
+	&__box-link {
+		display: block;
+		text-align: right;
+		margin-bottom: 2em;
+		font-weight: bold;
+		color: $gold;
+		text-decoration: none;
+		transition: color .3s;
+
+		&:hover {
+			color: $darkgold;
+		}
+	}
+
+	&__bg-icon {
+		display: none;
 	}
 }
 

@@ -139,6 +139,7 @@ h1.company-name {
   left: 1em;
   transform: translateY(-50%);
   z-index: 500;
+  touch-action: none;
 }
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   background-color: #fff;
@@ -159,6 +160,7 @@ h1.company-name {
   transform: translateX(-102%);
   transition: transform 0.3s;
   z-index: 10;
+  touch-action: none;
 }
 .nav-mobile--active {
   transform: translateX(0);
@@ -414,6 +416,8 @@ h1.company-name {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, color;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 .contact__form-btn:hover, .contact__form-btn:focus {
   outline: none;
